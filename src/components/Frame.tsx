@@ -17,21 +17,23 @@ import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
 import { PROJECT_TITLE } from "~/lib/constants";
 
-function ExampleCard() {
+function LinkButtons() {
+  const openLink = useCallback((url: string) => {
+    sdk.actions.openUrl(url);
+  }, []);
+
   return (
-    <Card className="border-neutral-200 bg-white">
-      <CardHeader>
-        <CardTitle className="text-neutral-900">Welcome to the Frame Template</CardTitle>
-        <CardDescription className="text-neutral-600">
-          This is an example card that you can customize or remove
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="text-neutral-800">
-        <p>
-          Your frame content goes here. The text is intentionally dark to ensure good readability.
-        </p>
-      </CardContent>
-    </Card>
+    <div className="flex flex-col gap-2">
+      {SOCIAL_LINKS.map((link, index) => (
+        <PurpleButton
+          key={index}
+          onClick={() => openLink(link.url)}
+          className="w-full"
+        >
+          {link.label}
+        </PurpleButton>
+      ))}
+    </div>
   );
 }
 
@@ -137,7 +139,17 @@ export default function Frame(
     >
       <div className="w-[300px] mx-auto py-2 px-2">
         <h1 className="text-2xl font-bold text-center mb-4 text-neutral-900">{title}</h1>
-        <ExampleCard />
+        <Card className="border-neutral-200 bg-white">
+          <CardHeader>
+            <CardTitle className="text-neutral-900">Your Links</CardTitle>
+            <CardDescription className="text-neutral-600">
+              Connect with me across platforms
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-neutral-800">
+            <LinkButtons />
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
