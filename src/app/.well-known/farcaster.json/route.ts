@@ -5,11 +5,13 @@ export async function GET() {
 
   const config = {
     accountAssociation: {
-      header:
-        "eyJmaWQiOjM2MjEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyY2Q4NWEwOTMyNjFmNTkyNzA4MDRBNkVBNjk3Q2VBNENlQkVjYWZFIn0",
-      payload: "eyJkb21haW4iOiJmcmFtZXMtdjIudmVyY2VsLmFwcCJ9",
-      signature:
-        "MHhiNDIwMzQ1MGZkNzgzYTExZjRiOTllZTFlYjA3NmMwOTdjM2JkOTY1NGM2ODZjYjkyZTAyMzk2Y2Q0YjU2MWY1MjY5NjI5ZGQ5NTliYjU0YzEwOGI4OGVmNjdjMTVlZTdjZDc2YTRiMGU5NzkzNzA3YzkxYzFkOWFjNTg0YmQzNjFi",
+      message: {
+        domain: "hellno.eth-linkloom-or-frameflow.vercel.app",
+        timestamp: 1737368931,
+        expirationTime: 1745144931
+      },
+      signature: "9f79b60ae1854f3bba401689094c07e514a5f00f74f908e528b86f3ed49a0eb23341947bb8602dd71b70a5c0c5a8fbd6561615e893d0a3cb9d61a24a5a57a7961b",
+      signingKey: "f6154262ba4fc158ff53ed85248e8178a8636989afd564989d18c8eefe81692f"
     },
     frame: {
       version: "1",
