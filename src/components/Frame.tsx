@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useCallback, useState } from "react";
+import { SOCIAL_LINKS } from "~/lib/constants";
 import sdk, {
   AddFrame,
   SignIn as SignInCore,
